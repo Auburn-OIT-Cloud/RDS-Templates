@@ -1,5 +1,5 @@
+ # WVD group sync tool
  
-#WVD group sync tool
 _WVD_Group_SYNC_ Adds users in the AD group specified and removes user from the AppPool who are not in the AD group
  _WVD_Group_SYNC_ Adds users in the AD group specified but dose not remove users
 ### Prerequs 
