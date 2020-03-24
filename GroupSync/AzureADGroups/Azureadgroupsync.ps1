@@ -10,12 +10,6 @@ Specifies the Tenant name for the WVD service.
 Specifies the Host Pool name for the WVD service.
 .PARAMETER wvdAppGroupName
 Specifies the App Group users are added to.
-.NOTES
-Script is offered as-is with no warranty
-Test it before you trust it
-Author      : Travis Roberts
-Website     : www.ciraltos.com
-Version     : 1.0.0.0 Initial Build
 #>
 
 [CmdletBinding()]
