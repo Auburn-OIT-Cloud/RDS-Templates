@@ -49,17 +49,20 @@
           "definition": {
             "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
             "actions": {
-                "runAfter": {},
-                "type": "Http",
-                "HTTP": {
-                    "inputs": {
-                        "body": "[parameters('actionSettingsBody')]"
-                    },
+              "HTTP_Webhook": {
+                "inputs": {
+                  "subscribe": {
+                    "body": "[parameters('actionSettingsBody')]",
                     "method": "POST",
-                    "URI": "[parameters('webhookURI')]"
-                }
+                    "uri": "[parameters('webhookURI')]"
+                  },
+                  "unsubscribe": {}
+                },
+                "runAfter": {},
+                "type": "Http"
+              }
             },
-                "contentVersion": "1.0.0.0",
+            "contentVersion": "1.0.0.0",
             "outputs": {},
             "parameters": {},
             "triggers": {

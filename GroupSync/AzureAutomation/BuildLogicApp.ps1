@@ -57,7 +57,7 @@ param(
 
 #Initializing variables
 $RDBrokerURL = "https://rdbroker.wvd.microsoft.com"
-$ScriptRepoLocation = "https://raw.githubusercontent.com/Azure/RDS-Templates/master/wvd-templates/wvd-scaling-script"
+$ScriptRepoLocation = "https://raw.githubusercontent.com/Auburn-OIT-Cloud/RDS-Templates/master/GroupSync/AzureAutomation/"
 $Location = "East Us"
 # Setting ErrorActionPreference to stop script execution when error occurs
 $ErrorActionPreference = "Stop"
@@ -115,7 +115,7 @@ if ($RoleAssignment.RoleDefinitionName -eq "Owner" -or $RoleAssignment.RoleDefin
                     }
 		$RequestBodyJson = $RequestBody | ConvertTo-Json
 		$LogicAppName = ($wvdAppGroupName + "_" + "Group" + "_" + "Sync").Replace(" ","")
-		$SchedulerDeployment = New-AzResourceGroupDeployment -ResourceGroupName $ResourceGroupName -TemplateUri "$ScriptRepoLocation/azureLogicAppCreation.json" -logicappname $LogicAppName -webhookURI $WebhookURI.Replace("`n","").Replace("`r","") -actionSettingsBody $RequestBodyJson -recurrenceInterval $RecurrenceInterval -Verbose
+		$SchedulerDeployment = New-AzResourceGroupDeployment -ResourceGroupName $ResourceGroupName -TemplateUri "$ScriptRepoLocation/GroupSyncLogicAppTemplate.json" -logicappname $LogicAppName -webhookURI $WebhookURI.Replace("`n","").Replace("`r","") -actionSettingsBody $RequestBodyJson -recurrenceInterval $RecurrenceInterval -Verbose
 		if ($SchedulerDeployment.ProvisioningState -eq "Succeeded") {
 			Write-Output "$wvdAppGroupName Group Sync has been created"
 		}
