@@ -53,10 +53,10 @@
                 "runAfter": {},
                 "type": "Http",
                     "inputs": {
-                        "body": "[parameters('actionSettingsBody')]"
-                    },
-                    "method": "POST",
-                    "URI": "[parameters('webhookURI')]"
+                        "body": "[parameters('actionSettingsBody')]",
+                        "method": "POST",
+                        "URI": "[parameters('webhookURI')]"
+                  }
                 }
             },
                 "contentVersion": "1.0.0.0",
