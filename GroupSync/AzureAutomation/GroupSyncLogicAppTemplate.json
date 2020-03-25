@@ -49,9 +49,9 @@
           "definition": {
             "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
             "actions": {
+              "HTTP": {
                 "runAfter": {},
                 "type": "Http",
-                "HTTP": {
                     "inputs": {
                         "body": "[parameters('actionSettingsBody')]"
                     },
